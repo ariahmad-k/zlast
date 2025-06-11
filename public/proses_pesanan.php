@@ -20,8 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cart_data'])) {
         // 2. Validasi Harga & Stok di Sisi Server
         $total_harga_server = 0;
         $produk_valid = [];
-        $stmt_produk = mysqli_prepare($koneksi, "SELECT id_produk, nama_produk, harga, stok, status_produk FROM produk WHERE id_produk = ?");
-
+        $stmt_produk = mysqli_prepare($koneksi, "SELECT id_produk, nama_produk, harga, stok, status_produk FROM produk WHERE id_produk = ? FOR UPDATE");
+        
         foreach ($cart_data as $id => $item) {
             mysqli_stmt_bind_param($stmt_produk, "s", $id);
             mysqli_stmt_execute($stmt_produk);

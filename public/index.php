@@ -45,11 +45,10 @@ if (!$result_produk) {
 }
 
 ?>
-?>
 
 <section class="hero" id="home">
     <main class="content">
-        <h1>Ngopi, Nga<span>Balok</span>, Ngawangkong</h1>
+        <h1>Ngopi, Nga<span>Balok</span>, Ngawadul </h1>
         <p>Rasakan kelezatan kue balok lumer khas kami yang legendaris.</p>
         <a href="menu.php" class="cta">Pesan Sekarang</a>
     </main>
@@ -83,15 +82,6 @@ if (!$result_produk) {
                 <h3 class="menu-card-title">- <?= htmlspecialchars($row['nama_produk'] ?? 'Nama Produk') ?> -</h3>
 
                 <p class="menu-card-price">Rp <?= number_format($row['harga'] ?? 0, 0, ',', '.') ?></p>
-
-                <div class="add-to-cart-btn">
-                    <button class="btn"
-                        data-id="<?= htmlspecialchars($row['id_produk'] ?? '') ?>"
-                        data-nama="<?= htmlspecialchars($row['nama_produk'] ?? 'Produk') ?>"
-                        data-harga="<?= htmlspecialchars($row['harga'] ?? 0) ?>">
-                        <i data-feather="shopping-cart"></i> Tambah
-                    </button>
-                </div>
             </div>
         </div>
         <?php endwhile; ?>
